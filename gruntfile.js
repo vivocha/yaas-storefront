@@ -16,8 +16,8 @@ module.exports = function (grunt) {
         // Syntax example for npm 2.0 parameters: $ npm run-script singleProd -- --pid=xxx --cid=123
         //PROJECT_ID = grunt.option('pid') || 'defaultproj',
         //CLIENT_ID = grunt.option('cid') || 'hkpWzlQnCIe4MSTi1Ud94Q7O36aRrRrO',
-        PROJECT_ID = grunt.option('pid') || 'defaultproj',
-        CLIENT_ID = grunt.option('cid') || 'hkpWzlQnCIe4MSTi1Ud94Q7O36aRrRrO',
+        PROJECT_ID = grunt.option('pid') || 'vvcyaasstore',
+        CLIENT_ID = grunt.option('cid') || '3TX3FwDO958ehLvrImagj2Fw7oTDtqKK',
 
         REDIRECT_URI = 'http://127.0.0.1:9000',
 
