@@ -21,6 +21,7 @@
     <![endif]-->
 </head>
 <body ng-class="{'fixedLayout': showCart }">
+    <div ng-controller="vvcTest" vvc-script><h1>VIVOCHA TEST {{ test }}</h1></div>
     <div ng-class="{'right': showCart, 'left': showMobileNav}" class="off-canvas">
         <div ui-view="sidebarNavigation" class="sidebar-offcanvas hidden-md hidden-lg" id="sidebar" role="navigation"></div>
         <div class="mainContent" ng-class="{'main-on-top': checkoutCartEditVisible }">
@@ -173,6 +174,7 @@
     <script src="js/app/shared/directives/popover.js"></script>
     <script src="js/vendor/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="js/vendor-static/jquery.menu-aim.js"></script>
+    <script src="js/app/vivocha/vivocha-index.js"></script>
     <script src="js/app/app.js"></script>
     <!-- endbuild -->
     <!-- static script resources -->
