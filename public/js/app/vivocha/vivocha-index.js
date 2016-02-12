@@ -26,6 +26,14 @@ angular
 
       var theCart = {};
 
+      function pushCoupon(couponCode){
+        $rootScope.showCart = true;
+        var couponScope = angular.element("#apply-coupon").scope();
+        couponScope.couponCollapsed = false;
+        couponScope.couponCode = couponCode;
+        couponScope.applyCoupon(couponCode);
+      }
+
       $timeout(function(){
 
         vivocha.ready(function(){
@@ -33,8 +41,14 @@ angular
 
           vivocha.events.on("contact",function(contact){
             console.log("CONTACT CALLED");
+            //pushCoupon('DOGDAYS')
             contact.on("cart:get",function(data,cb){
               cb(null,JSON.parse(angular.toJson(theCart)));
+
+            });
+
+            contact.on("coupon:push",function(coupon_code){
+              pushCoupon(coupon_code);
             })
           })
 
