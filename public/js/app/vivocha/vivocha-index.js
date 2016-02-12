@@ -5,21 +5,28 @@ angular
     .controller('vvcTest',['$scope','$rootScope',function($scope,$rootScope){
 
       $rootScope.$on('cart:updated',function(event,obj){
-        if (vivocha){
+        vivocha_send("cart_updated",obj.cart);
+      });
+
+      $rootScope.$on('user:signedin',function(event,obj) {
+        vivocha_send("user_signedin",obj);
+      });
+
+      $rootScope.$on('user:signedout',function(event,obj) {
+        vivocha_send("user_signedout",obj);
+      });
+
+      function vivocha_send(evt,obj){
+        if (typeof vivocha != "undefined"){
           vivocha.ready(function(){
             if (vivocha.contact) {
-                vivocha.contact.request("cart_updated", JSON.parse(angular.toJson(obj.cart)));
+              console.log("vvcsend",evt,JSON.parse(angular.toJson(obj)));
+              vivocha.contact.request(evt, JSON.parse(angular.toJson(obj)));
             }
           })
         }
-        else console.log("vivocha is undefined");
-        console.log("cart updated", obj);
-      })
-
-      $rootScope.$on('authtoken:obtained',function(event,obj){
-        console.log("authtoken:obtained", obj);
-      })
-
+        else console.log("vivocha_send","vivocha id undefined");
+      }
 
     }])
     .directive('vvcScript',['vvc_acct_name',function(vvc_acct_name) {
