@@ -5,18 +5,11 @@ angular
     .controller('vvcTest',['$scope','$rootScope',function($scope,$rootScope){
 
       $rootScope.$on('cart:updated',function(event,obj){
-
         if (vivocha){
           vivocha.ready(function(){
             if (vivocha.contact) {
-                console.log("request-->",obj.cart, JSON.stringify(obj.cart));
-                vivocha.contact.request("cart_updated", {
-                  cart_id : obj.cart.id,
-                  customer_id: obj.cart.customerId
-                });
-                console.log("vivocha sent request")
+                vivocha.contact.request("cart_updated", JSON.parse(angular.toJson(obj.cart)));
             }
-
           })
         }
         else console.log("vivocha is undefined");
