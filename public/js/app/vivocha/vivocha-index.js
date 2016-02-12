@@ -27,7 +27,6 @@ angular
       var theCart = {};
 
       $timeout(function(){
-        var vivocha = $window.vivocha;
 
         vivocha.ready(function(){
           console.log("READY CALLED");
@@ -70,3 +69,8 @@ angular
     }])
 
 ;
+
+
+var products = {};
+
+var ids = _.keys(items);
