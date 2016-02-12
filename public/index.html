@@ -20,8 +20,8 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 </head>
-<body ng-class="{'fixedLayout': showCart }">
-    <div ng-controller="vvcTest" vvc-script><h1>VIVOCHA TEST {{ test }}</h1></div>
+<body ng-class="{'fixedLayout': showCart }" vvc-script>
+    <div ng-controller="vvcTest"></div>
     <div ng-class="{'right': showCart, 'left': showMobileNav}" class="off-canvas">
         <div ui-view="sidebarNavigation" class="sidebar-offcanvas hidden-md hidden-lg" id="sidebar" role="navigation"></div>
         <div class="mainContent" ng-class="{'main-on-top': checkoutCartEditVisible }">
