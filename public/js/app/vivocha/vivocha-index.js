@@ -69,8 +69,3 @@ angular
     }])
 
 ;
-
-
-var products = {};
-
-var ids = _.keys(items);
