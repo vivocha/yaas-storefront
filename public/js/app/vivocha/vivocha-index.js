@@ -15,14 +15,12 @@ angular
           js.type = "text/javascript";
           js.src = "//www.vivocha.com/a/"+vvc_acct_name+"/api/vivocha.js";
           head.appendChild(js);
-          //$window.vvc_ready_handlers = [];
-          //$window.vivocha = { ready: function(cb) { $window.vvc_ready_handlers.push(cb); }}
-          //$rootScope.showCart = true;
+
 
         }
       }
     }])
-    .controller('vvcTest',['$scope','$rootScope','$window','$timeout',function($scope,$rootScope,$window,$timeout){
+    .controller('vvcCtrl',['$scope','$rootScope','$window','$timeout',function($scope,$rootScope,$window,$timeout){
 
       var theCart = {};
 
@@ -41,7 +39,6 @@ angular
 
           vivocha.events.on("contact",function(contact){
             console.log("CONTACT CALLED");
-            //pushCoupon('DOGDAYS')
             contact.on("cart:get",function(data,cb){
               cb(null,JSON.parse(angular.toJson(theCart)));
 

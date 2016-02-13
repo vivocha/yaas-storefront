@@ -21,7 +21,7 @@
     <![endif]-->
 </head>
 <body ng-class="{'fixedLayout': showCart }" vvc-script>
-    <div ng-controller="vvcTest"></div>
+    <div ng-controller="vvcCtrl"></div>
     <div ng-class="{'right': showCart, 'left': showMobileNav}" class="off-canvas">
         <div ui-view="sidebarNavigation" class="sidebar-offcanvas hidden-md hidden-lg" id="sidebar" role="navigation"></div>
         <div class="mainContent" ng-class="{'main-on-top': checkoutCartEditVisible }">
